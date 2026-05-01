@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # SECURITY KEY: Kew link peleo eita chara hit korte parbe na
-SECRET_KEY = "sunny_private_786" 
+SECRET_KEY = "rashik_69" 
 
 async def hit_service(session, phone):
     # Provider name hidden
@@ -30,7 +30,7 @@ def server_api():
 
     # 1. Access Protection
     if key != SECRET_KEY:
-        return jsonify({"error": "Unauthorized Access!", "owner": "@sunny7695"}), 403
+        return jsonify({"error": "Unauthorized Access!", "owner": "@RASHIK_69"}), 403
 
     # 2. Maximum Amount Limit (Strict 10)
     if amount > 10:
@@ -54,7 +54,7 @@ def server_api():
         "success": True,
         "target": phone,
         "hits": amount,
-        "owner": "@sunny7695",
+        "owner": "@RASHIK_69",
         "status": "System Online"
     })
 
