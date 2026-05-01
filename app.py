@@ -41,18 +41,20 @@ def server_api():
 if key not in key_usage:
     key_usage[key] = 0
 
-if key_usage[key] >= MAX_LIMIT:
-    return jsonify({
-        "success": False,
-        "msg": "This key limit exceeded",
-        "limit": MAX_LIMIT,
-        "used": key_usage[key],
-        "remaining": 0,
-        "credit": "@RASHIK_69"
-    }), 429
+if key not in key_usage:
+        key_usage[key] = 0
 
-# increment korar por
-key_usage[key] += 1
+    if key_usage[key] >= MAX_LIMIT:
+        return jsonify({
+            "success": False,
+            "msg": "This key limit exceeded",
+            "limit": MAX_LIMIT,
+            "used": key_usage[key],
+            "remaining": 0,
+            "credit": "@RASHIK_69"
+        }), 429
+
+    key_usage[key] += 1
 
     # 2. Maximum Amount Limit (Strict 10)
     if amount > 10:
@@ -86,3 +88,4 @@ key_usage[key] += 1
 # Vercel handling
 def handler(event, context):
     return app(event, context)
+    
