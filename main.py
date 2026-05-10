@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # SECURITY KEY: Kew link peleo eita chara hit korte parbe na
-SECRET_KEY = "rashik_69" 
+SECRET_KEY = "rashik_1230" 
 
 async def hit_service(session, phone):
     # Provider name hidden
